@@ -24,7 +24,6 @@ const SingUpForm = () => {
     useEffect(() => {
         if (user) {
             resetFormFileds();
-            console.log("response", user);
         }
     }, [user]);
 
@@ -42,7 +41,6 @@ const SingUpForm = () => {
             if (error.code === 'auth/email-already-in-use') {
                 alert('already exist')
             }
-            console.log(error)
         }
     }
 

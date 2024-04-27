@@ -20,14 +20,13 @@ const SingInForm = () => {
     }
 
     const singInWithGoogle=async()=>{
-        const {user} =await signInWithGooglePopup();
+        await signInWithGooglePopup();
         const userDocRef = await createUserDocumentFromAuth(user);
     }
 
     useEffect(() => {
         if (user) {
             resetFormFileds();
-            console.log("response", user);
         }
     }, [user]);
 
@@ -49,8 +48,6 @@ const SingInForm = () => {
                 default:
                     break;
             }
-
-            console.log(error)
         }
     }
  
